@@ -34,7 +34,6 @@ INSTALLED_APPS = [
     "rest_framework_simplejwt",
     "rest_framework_simplejwt.token_blacklist",
     "django_filters",
-    "drf_yasg",
     "drf_spectacular",
     "users",
     "standards",
@@ -146,20 +145,11 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-# Swagger and Spectacular settings
-SWAGGER_SETTINGS = {
-    "SECURITY_DEFINITIONS": {
-        "Bearer": {
-            "type": "apiKey",
-            "name": "Authorization",
-            "in": "header",
-        },
-    },
-}
+# Spectacular settings
 SPECTACULAR_SETTINGS = {
-    "TITLE": "Your Project API",
-    "DESCRIPTION": "Your project description",
+    "TITLE": "Quality Assurance Unit - API",
+    "DESCRIPTION": "API to Manage the System of the Quality Assurance Unit at Colleges.",
     "VERSION": "1.0.0",
     "SERVE_INCLUDE_SCHEMA": False,
-    # OTHER SETTINGS
+    "SCHEMA_PATH_PREFIX": "/api",
 }
