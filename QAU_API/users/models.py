@@ -24,9 +24,10 @@ class User(AbstractUser):
     EMAIL_FIELD = "email"
     REQUIRED_FIELDS = ["username", "role"]
 
-    class Meta:
-        verbose_name = "user"
-        verbose_name_plural = "users"
-
     def __str__(self):
         return f"{self.username} ({self.get_role_display()})"
+
+    class Meta:
+        ordering = ["username"]
+        verbose_name = "user"
+        verbose_name_plural = "users"

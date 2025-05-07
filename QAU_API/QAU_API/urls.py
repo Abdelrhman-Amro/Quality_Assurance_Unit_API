@@ -6,4 +6,5 @@ urlpatterns = [
     path("api/", include("QAU_API.swagger")),
     path("api/", include("users.urls")),
     path("api/", include("users.auth")),
+    # path("api/", include("standards.urls")),
 ]
