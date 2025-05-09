@@ -76,7 +76,7 @@ class CourseAttachment(models.Model):
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4)
     course_file = models.ForeignKey(CourseFile, on_delete=models.CASCADE, related_name="course_attachments")
-    file = models.FileField(upload_to="course_files/", blank=True)
+    file = models.FileField(upload_to="course_files/")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
