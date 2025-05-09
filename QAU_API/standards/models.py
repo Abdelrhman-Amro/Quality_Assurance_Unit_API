@@ -123,8 +123,8 @@ class Request(models.Model):
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4)
     requester = models.ForeignKey(User, on_delete=models.CASCADE, related_name="sent_requests")
-    receiver = models.ForeignKey(User, on_delete=models.CASCADE, related_name="received_requests")
-    made_on = models.ForeignKey(Attachment, on_delete=models.CASCADE, related_name="requests")
+    receiver = models.ForeignKey(User, on_delete=models.SET_NULL, related_name="received_requests", null=True)
+    made_on = models.ForeignKey(Attachment, on_delete=models.SET_NULL, related_name="requests", null=True)
     status = models.CharField(max_length=10, choices=Status.choices, default=Status.PENDING)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
