@@ -3,8 +3,10 @@ import os
 from django.conf import settings
 from django.http import FileResponse, HttpResponse
 from django.shortcuts import get_object_or_404
+from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import status, viewsets
 from rest_framework.decorators import action
+from rest_framework.filters import OrderingFilter, SearchFilter
 from rest_framework.permissions import IsAdminUser, IsAuthenticated
 from rest_framework.response import Response
 
@@ -31,10 +33,22 @@ class AcademicYearViewSet(viewsets.ModelViewSet):
     ViewSet for AcademicYear model.
     Admin: Full CRUD operations
     Others: Read-only access
+
+    Features:
+    - Filter by status
+    - Sort by start_date
+    - Search by start_date, end_date
+    - Pagination
     """
 
     queryset = AcademicYear.objects.all()
     serializer_class = AcademicYearSerializer
+
+    filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
+    filterset_fields = ["status"]
+    search_fields = ["start_date"]
+    ordering_fields = ["start_date"]
+    ordering = ["-start_date"]
 
     def get_permissions(self):
         if self.action in ["create", "update", "partial_update", "destroy"]:
@@ -47,10 +61,22 @@ class StandardViewSet(viewsets.ModelViewSet):
     ViewSet for Standard model.
     Admin: Full CRUD operations
     Others: Read-only access
+
+    Features:
+    - Filter by type, academic_year
+    - Sort by created_at
+    - Search by title
+    - Pagination
     """
 
     queryset = Standard.objects.all()
     serializer_class = StandardSerializer
+
+    filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
+    filterset_fields = ["type", "academic_year"]
+    search_fields = ["title"]
+    ordering_fields = ["created_at", "title"]
+    ordering = ["-created_at"]
 
     def get_permissions(self):
         if self.action in ["create", "update", "partial_update", "destroy"]:
@@ -63,10 +89,22 @@ class PointerViewSet(viewsets.ModelViewSet):
     ViewSet for Pointer model.
     Admin: Full CRUD operations
     Others: Read-only access
+
+    Features:
+    - Filter by standard
+    - Sort by created_at
+    - Search by title
+    - Pagination
     """
 
     queryset = Pointer.objects.all()
     serializer_class = PointerSerializer
+
+    filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
+    filterset_fields = ["standard"]
+    search_fields = ["title"]
+    ordering_fields = ["created_at", "title"]
+    ordering = ["-created_at"]
 
     def get_permissions(self):
         if self.action in ["create", "update", "partial_update", "destroy"]:
@@ -79,10 +117,22 @@ class ElementViewSet(viewsets.ModelViewSet):
     ViewSet for Element model.
     Admin: Full CRUD operations
     Others: Read-only access
+
+    Features:
+    - Filter by pointer
+    - Sort by created_at
+    - Search by title
+    - Pagination
     """
 
     queryset = Element.objects.all()
     serializer_class = ElementSerializer
+
+    filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
+    filterset_fields = ["pointer"]
+    search_fields = ["title"]
+    ordering_fields = ["created_at", "title"]
+    ordering = ["-created_at"]
 
     def get_permissions(self):
         if self.action in ["create", "update", "partial_update", "destroy"]:
@@ -96,10 +146,22 @@ class AttachmentViewSet(viewsets.ModelViewSet):
     Admin: Full CRUD operations
     SUPERVISOR/TA: Upload/Remove if assigned to standard, Download if assigned or shared
     Others: Read-only access
+
+    Features:
+    - Filter by element
+    - Sort by created_at
+    - Search by title
+    - Pagination
     """
 
     queryset = Attachment.objects.all()
     serializer_class = AttachmentSerializer
+
+    filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
+    filterset_fields = ["element"]
+    search_fields = ["title"]
+    ordering_fields = ["created_at", "title"]
+    ordering = ["-created_at"]
 
     def get_permissions(self):
         if self.action in ["create", "update", "partial_update", "destroy"]:
@@ -226,9 +288,21 @@ class RequestViewSet(viewsets.ModelViewSet):
                   Retrieve/List their sent/received requests,
                   Approve/Reject received requests (if not pending),
                   Cancel sent requests (if not pending)
+
+    Features:
+    - Filter by status, requester, receiver
+    - Sort by created_at
+    - Search by requester, receiver
+    - Pagination
     """
 
     queryset = Request.objects.all()
+
+    filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
+    filterset_fields = ["status", "requester", "receiver"]
+    search_fields = ["requester__username", "receiver__username"]
+    ordering_fields = ["created_at"]
+    ordering = ["-created_at"]
 
     def get_serializer_class(self):
         if self.action == "retrieve":

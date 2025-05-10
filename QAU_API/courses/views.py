@@ -2,8 +2,10 @@ import os
 
 from django.conf import settings
 from django.http import FileResponse
+from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import status, viewsets
 from rest_framework.decorators import action
+from rest_framework.filters import OrderingFilter, SearchFilter
 from rest_framework.permissions import IsAdminUser, IsAuthenticated
 from rest_framework.response import Response
 
@@ -21,10 +23,22 @@ class CourseViewSet(viewsets.ModelViewSet):
     ViewSet for Course model.
     Admin: Full CRUD operations
     Others: Read-only access
+
+    Features:
+    - Filter by academic_year, level, semester
+    - Sort by created_at
+    - Search by title
+    - Pagination
     """
 
     queryset = Course.objects.all()
     serializer_class = CourseSerializer
+
+    filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
+    filterset_fields = ["academic_year", "level", "semester"]
+    search_fields = ["title", "code"]
+    ordering_fields = ["created_at", "title", "credit_hours"]
+    ordering = ["-created_at"]
 
     def get_permissions(self):
         if self.action in ["create", "update", "partial_update", "destroy"]:
@@ -37,10 +51,22 @@ class CourseFileViewSet(viewsets.ModelViewSet):
     ViewSet for CourseFile model.
     Admin: Full CRUD operations
     Others: Read-only access
+
+    Features:
+    - Filter by course
+    - Sort by created_at
+    - Search by title
+    - Pagination
     """
 
     queryset = CourseFile.objects.all()
     serializer_class = CourseFileSerializer
+
+    filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
+    filterset_fields = ["course"]
+    search_fields = ["title"]
+    ordering_fields = ["created_at", "title"]
+    ordering = ["-created_at"]
 
     def get_permissions(self):
         if self.action in ["create", "update", "partial_update", "destroy"]:
@@ -54,11 +80,21 @@ class CourseAttachmentViewSet(viewsets.ModelViewSet):
     Admin: Full CRUD operations
     PROFESSOR: Upload/Remove/Download their own course attachments
     Others: Read-only access
+
+    Features:
+    - Filter by course_file
+    - Sort by created_at
+    - Pagination
     """
 
     queryset = CourseAttachment.objects.all()
     serializer_class = CourseAttachmentSerializer
     permission_classes = [IsProfessorOfCourse | IsAdminUser]
+
+    filter_backends = [DjangoFilterBackend, OrderingFilter]
+    filterset_fields = ["course_file"]
+    ordering_fields = ["created_at"]
+    ordering = ["-created_at"]
 
     def get_permissions(self):
         if self.action in ["retrieve", "list"]:
