@@ -8,8 +8,6 @@ env = environ.Env()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-environ.Env.read_env(BASE_DIR / ".env.dev")
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
@@ -19,7 +17,7 @@ SECRET_KEY = env.str("SECRET_KEY", default="fallback_secret_key")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool("DEBUG", default=False)
 
-ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", default=["localhost"])
+ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
 
 # Custom User model
 AUTH_USER_MODEL = "users.User"
@@ -78,7 +76,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "QAU_API.wsgi.application"
-
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
