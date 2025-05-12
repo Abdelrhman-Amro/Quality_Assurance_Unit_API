@@ -45,6 +45,25 @@ class CourseViewSet(viewsets.ModelViewSet):
             return [IsAdminUser()]
         return [IsAuthenticated()]
 
+    def perform_create(self, serializer):
+        """
+        Override create method to automatically create course files
+        based on the latest course in database
+        """
+        # First save the new course
+        new_course = serializer.save()
+
+        # Get the latest course before this one (to use as a template)
+        latest_course = Course.objects.exclude(id=new_course.id).order_by("-created_at").first()
+
+        if latest_course:
+            # Get all course files from that latest course
+            template_course_files = CourseFile.objects.filter(course=latest_course)
+
+            # Create similar course files for the new course
+            for template_file in template_course_files:
+                CourseFile.objects.create(course=new_course, title=template_file.title)
+
 
 class CourseFileViewSet(viewsets.ModelViewSet):
     """
@@ -72,6 +91,26 @@ class CourseFileViewSet(viewsets.ModelViewSet):
         if self.action in ["create", "update", "partial_update", "destroy"]:
             return [IsAdminUser()]
         return [IsAuthenticated()]
+
+    def perform_create(self, serializer):
+        """
+        Override create method to automatically create the same course file
+        for all courses in the same academic year
+        """
+        # First save the original course file
+        course_file = serializer.save()
+
+        # Get the course and its academic year
+        course = course_file.course
+        academic_year = course.academic_year
+
+        # Find all other courses from the same academic year (excluding the current one)
+        related_courses = Course.objects.filter(academic_year=academic_year).exclude(id=course.id)
+
+        # Create the same course file for all related courses
+        for related_course in related_courses:
+            # Create a new course file for each related course
+            CourseFile.objects.create(course=related_course, title=course_file.title)
 
 
 class CourseAttachmentViewSet(viewsets.ModelViewSet):
