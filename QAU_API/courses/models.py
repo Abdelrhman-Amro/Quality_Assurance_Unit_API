@@ -29,6 +29,12 @@ class Course(models.Model):
         THREE = 3, "3"
         FOUR = 4, "4"
 
+    class Department(models.TextChoices):
+        ARTIFICIAL_INTELLIGENCE = "AI", "Artificial Intelligence"
+        COMPUTER_SCIENCE = "CS", "Computer Science"
+        NETWORK = "NT", "Network"
+        INFORMATION_SYSTEMS = "IS", "Information Systems"
+
     id = models.UUIDField(primary_key=True, default=uuid.uuid4)
     academic_year = models.ForeignKey(AcademicYear, on_delete=models.CASCADE, related_name="courses")
     professor = models.ForeignKey(User, on_delete=models.SET_NULL, related_name="courses", null=True)
@@ -37,6 +43,7 @@ class Course(models.Model):
     level = models.IntegerField(choices=Level.choices)
     semester = models.IntegerField(choices=Semester.choices)
     credit_hours = models.IntegerField(choices=CreditHours.choices)
+    department = models.CharField(max_length=50, choices=Department.choices, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

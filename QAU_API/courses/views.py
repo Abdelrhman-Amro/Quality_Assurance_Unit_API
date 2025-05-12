@@ -35,9 +35,9 @@ class CourseViewSet(viewsets.ModelViewSet):
     serializer_class = CourseSerializer
 
     filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
-    filterset_fields = ["academic_year", "level", "semester"]
+    filterset_fields = ["academic_year", "level", "semester", "department"]
     search_fields = ["title", "code"]
-    ordering_fields = ["created_at", "title", "credit_hours"]
+    ordering_fields = ["created_at", "title", "credit_hours", "department"]
     ordering = ["-created_at"]
 
     def get_permissions(self):

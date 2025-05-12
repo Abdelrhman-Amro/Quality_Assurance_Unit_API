@@ -19,8 +19,8 @@ class CourseFileInline(admin.TabularInline):
 
 @admin.register(Course)
 class CourseAdmin(admin.ModelAdmin):
-    list_display = ["title", "professor", "academic_year", "created_at"]
-    list_filter = ["academic_year", "professor"]
+    list_display = ["title", "professor", "department", "academic_year", "created_at"]
+    list_filter = ["academic_year", "professor", "department"]
     search_fields = ["title", "professor__username", "professor__email"]
     date_hierarchy = "created_at"
     inlines = [CourseFileInline]

@@ -22,7 +22,8 @@ services:
             - DJANGO_SUPERUSER_PASSWORD=${DJANGO_SUPERUSER_PASSWORD}
         command: >
             sh -c "python QAU_API/manage.py migrate --noinput &&
-                  python QAU_API/manage.py runserver 0.0.0.0:8000"
+                pip install --no-cache-dir -r requirements.txt &&
+                python QAU_API/manage.py runserver 0.0.0.0:8000"
 
     # PostgreSQL database
     db:

@@ -35,6 +35,7 @@ class CourseSerializer(serializers.ModelSerializer):
             "level",
             "semester",
             "credit_hours",
+            "department",
             "academic_year",
             "professor",
             "professor_id",
@@ -42,6 +43,15 @@ class CourseSerializer(serializers.ModelSerializer):
             "updated_at",
         ]
         read_only_fields = ["id", "created_at", "updated_at"]
+
+    def validate(self, data):
+        level = data.get("level")
+        department = data.get("department")
+        if department is not None and (level is None or level <= 2):
+            raise serializers.ValidationError(
+                {"department": "Department can only be set if level is greater than 2."}
+            )
+        return data
 
 
 class CourseFileSerializer(serializers.ModelSerializer):

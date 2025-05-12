@@ -196,7 +196,7 @@ class AttachmentViewSet(viewsets.ModelViewSet):
         else:
             serializer.save()
 
-    @action(detail=True, methods=["post"])
+    @action(detail=True, methods=["post", "get"])
     def upload(self, request, pk=None):
         """
         Upload an attachment file.
@@ -285,9 +285,9 @@ class RequestViewSet(viewsets.ModelViewSet):
     ViewSet for Request model.
     Admin: Full CRUD operations, Approve/Reject/Cancel
     SUPERVISOR/TA: Create if attachment has file and uploader,
-                  Retrieve/List their sent/received requests,
-                  Approve/Reject received requests (if not pending),
-                  Cancel sent requests (if not pending)
+                Retrieve/List their sent/received requests,
+                Approve/Reject received requests (if not pending),
+                Cancel sent requests (if not pending)
 
     Features:
     - Filter by status, requester, receiver
