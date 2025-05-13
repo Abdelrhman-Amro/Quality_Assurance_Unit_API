@@ -1,0 +1,1016 @@
+[
+    {
+        "title": "Human Rights",
+        "code": "URM111",
+        "level": 1,
+        "semester": 1,
+        "credit_hours": 1,
+        "department": ""
+    },
+    {
+        "title": "Introduction to Computers",
+        "code": "URM112",
+        "level": 1,
+        "semester": 1,
+        "credit_hours": 3,
+        "department": ""
+    },
+    {
+        "title": "English Language (1)",
+        "code": "BSM113",
+        "level": 1,
+        "semester": 1,
+        "credit_hours": 2,
+        "department": ""
+    },
+    {
+        "title": "Physics",
+        "code": "BSM114",
+        "level": 1,
+        "semester": 1,
+        "credit_hours": 3,
+        "department": ""
+    },
+    {
+        "title": "Fund of Manage & Economics",
+        "code": "BSM115",
+        "level": 1,
+        "semester": 1,
+        "credit_hours": 3,
+        "department": ""
+    },
+    {
+        "title": "Mathematics (1)",
+        "code": "BSM116",
+        "level": 1,
+        "semester": 1,
+        "credit_hours": 2,
+        "department": ""
+    },
+    {
+        "title": "Introduction to Programming",
+        "code": "CSM117",
+        "level": 1,
+        "semester": 1,
+        "credit_hours": 4,
+        "department": ""
+    },
+    {
+        "title": "Entrepreneurship & Innovation",
+        "code": "URM121",
+        "level": 1,
+        "semester": 2,
+        "credit_hours": 2,
+        "department": ""
+    },
+    {
+        "title": "Marketing & Digital Strategy",
+        "code": "URM122",
+        "level": 1,
+        "semester": 2,
+        "credit_hours": 2,
+        "department": ""
+    },
+    {
+        "title": "Discrete Math & Graph",
+        "code": "BSM123",
+        "level": 1,
+        "semester": 2,
+        "credit_hours": 3,
+        "department": ""
+    },
+    {
+        "title": "English Language (2)",
+        "code": "BSM124",
+        "level": 1,
+        "semester": 2,
+        "credit_hours": 2,
+        "department": ""
+    },
+    {
+        "title": "Digital Systems",
+        "code": "BSM125",
+        "level": 1,
+        "semester": 2,
+        "credit_hours": 3,
+        "department": ""
+    },
+    {
+        "title": "Mathematics (2)",
+        "code": "BSM126",
+        "level": 1,
+        "semester": 2,
+        "credit_hours": 2,
+        "department": ""
+    },
+    {
+        "title": "Object Oriented Programming",
+        "code": "CSM127",
+        "level": 1,
+        "semester": 2,
+        "credit_hours": 4,
+        "department": ""
+    },
+    {
+        "title": "Natural Res & Sustainability",
+        "code": "URM211",
+        "level": 2,
+        "semester": 1,
+        "credit_hours": 1,
+        "department": ""
+    },
+    {
+        "title": "Electronics",
+        "code": "BSM212",
+        "level": 2,
+        "semester": 1,
+        "credit_hours": 3,
+        "department": ""
+    },
+    {
+        "title": "Project Manage Professional",
+        "code": "BSM213",
+        "level": 2,
+        "semester": 1,
+        "credit_hours": 3,
+        "department": ""
+    },
+    {
+        "title": "Probability & Statistic",
+        "code": "BSM214",
+        "level": 2,
+        "semester": 1,
+        "credit_hours": 3,
+        "department": ""
+    },
+    {
+        "title": "Microprocessors",
+        "code": "CSM215",
+        "level": 2,
+        "semester": 1,
+        "credit_hours": 4,
+        "department": ""
+    },
+    {
+        "title": "Data Structures",
+        "code": "CSM216",
+        "level": 2,
+        "semester": 1,
+        "credit_hours": 4,
+        "department": ""
+    },
+    {
+        "title": "Creative & Scientific Thinking",
+        "code": "URM221",
+        "level": 2,
+        "semester": 2,
+        "credit_hours": 2,
+        "department": ""
+    },
+    {
+        "title": "Mathematics (3)",
+        "code": "BSM222",
+        "level": 2,
+        "semester": 2,
+        "credit_hours": 2,
+        "department": ""
+    },
+    {
+        "title": "Visual Programming",
+        "code": "CSM223",
+        "level": 2,
+        "semester": 2,
+        "credit_hours": 3,
+        "department": ""
+    },
+    {
+        "title": "Computer Architecture",
+        "code": "CSM224",
+        "level": 2,
+        "semester": 2,
+        "credit_hours": 4,
+        "department": ""
+    },
+    {
+        "title": "Computer Security",
+        "code": "CSM225",
+        "level": 2,
+        "semester": 2,
+        "credit_hours": 3,
+        "department": ""
+    },
+    {
+        "title": "Database Management Systems (1)",
+        "code": "ISM226",
+        "level": 2,
+        "semester": 2,
+        "credit_hours": 4,
+        "department": ""
+    },
+    {
+        "title": "Operating Systems",
+        "code": "CSM311",
+        "level": 3,
+        "semester": 1,
+        "credit_hours": 3,
+        "department": "AI"
+    },
+    {
+        "title": "Operation Research (1)",
+        "code": "ISM312",
+        "level": 3,
+        "semester": 1,
+        "credit_hours": 3,
+        "department": "AI"
+    },
+    {
+        "title": "Computer Networks",
+        "code": "NTM313",
+        "level": 3,
+        "semester": 1,
+        "credit_hours": 3,
+        "department": "AI"
+    },
+    {
+        "title": "Software Engineering (1)",
+        "code": "CSM314",
+        "level": 3,
+        "semester": 1,
+        "credit_hours": 3,
+        "department": "AI"
+    },
+    {
+        "title": "Artificial Intelligence",
+        "code": "AIM315",
+        "level": 3,
+        "semester": 1,
+        "credit_hours": 3,
+        "department": "AI"
+    },
+    {
+        "title": "Electric (1)",
+        "code": "AIE316",
+        "level": 3,
+        "semester": 1,
+        "credit_hours": 3,
+        "department": "AI"
+    },
+
+    {
+        "title": "Research Methods & Ethics",
+        "code": "URM321",
+        "level": 3,
+        "semester": 2,
+        "credit_hours": 2,
+        "department": "AI"
+    },
+    {
+        "title": "Image Proc & Pattern Recognition",
+        "code": "AIM322",
+        "level": 3,
+        "semester": 2,
+        "credit_hours": 3,
+        "department": "AI"
+    },
+    {
+        "title": "Programming for AI",
+        "code": "AIM323",
+        "level": 3,
+        "semester": 2,
+        "credit_hours": 3,
+        "department": "AI"
+    },
+    {
+        "title": "Computer Graphics",
+        "code": "CSM324",
+        "level": 3,
+        "semester": 2,
+        "credit_hours": 3,
+        "department": "AI"
+    },
+    {
+        "title": "Fundamentals of Data Science",
+        "code": "AIM325",
+        "level": 3,
+        "semester": 2,
+        "credit_hours": 4,
+        "department": "AI"
+    },
+    {
+        "title": "Elective (2)",
+        "code": "AIE326",
+        "level": 3,
+        "semester": 2,
+        "credit_hours": 3,
+        "department": "AI"
+    },
+    {
+        "title": "Data Mining and Analytics",
+        "code": "AIM411",
+        "level": 4,
+        "semester": 1,
+        "credit_hours": 3,
+        "department": "AI"
+    },
+    {
+        "title": "Machine Learning",
+        "code": "AIM412",
+        "level": 4,
+        "semester": 1,
+        "credit_hours": 3,
+        "department": "AI"
+    },
+    {
+        "title": "Embedded systems",
+        "code": "AIM413",
+        "level": 4,
+        "semester": 1,
+        "credit_hours": 3,
+        "department": "AI"
+    },
+    {
+        "title": "Intelligent Autonomous Systems",
+        "code": "AIM414",
+        "level": 4,
+        "semester": 1,
+        "credit_hours": 3,
+        "department": "AI"
+    },
+    {
+        "title": "Elective 3",
+        "code": "AIE415",
+        "level": 4,
+        "semester": 1,
+        "credit_hours": 3,
+        "department": "AI"
+    },
+    {
+        "title": "Project (1)",
+        "code": "FRM416",
+        "level": 4,
+        "semester": 1,
+        "credit_hours": 3,
+        "department": "AI"
+    },
+    {
+        "title": "Communication Skills",
+        "code": "URM421",
+        "level": 4,
+        "semester": 2,
+        "credit_hours": 2,
+        "department": "AI"
+    },
+    {
+        "title": "Natural Language Processing",
+        "code": "AIM422",
+        "level": 4,
+        "semester": 2,
+        "credit_hours": 3,
+        "department": "AI"
+    },
+    {
+        "title": "Deep Learning",
+        "code": "AIM423",
+        "level": 4,
+        "semester": 2,
+        "credit_hours": 4,
+        "department": "AI"
+    },
+    {
+        "title": "Parallel Programming",
+        "code": "CSM424",
+        "level": 4,
+        "semester": 2,
+        "credit_hours": 3,
+        "department": "AI"
+    },
+    {
+        "title": "Elective (4)",
+        "code": "AJE425",
+        "level": 4,
+        "semester": 2,
+        "credit_hours": 3,
+        "department": "AI"
+    },
+    {
+        "title": "Project (2)",
+        "code": "FRM426",
+        "level": 4,
+        "semester": 2,
+        "credit_hours": 3,
+        "department": "AI"
+    },
+    {
+        "title": "Field Training",
+        "code": "FRM429",
+        "level": 4,
+        "semester": 2,
+        "credit_hours": 0,
+        "department": "AI"
+    },
+    {
+        "title": "Operating Systems",
+        "code": "CSM311",
+        "level": 3,
+        "semester": 1,
+        "credit_hours": 3,
+        "department": "CS"
+    },
+    {
+        "title": "Operations Research (1)",
+        "code": "ISM312",
+        "level": 3,
+        "semester": 1,
+        "credit_hours": 3,
+        "department": "CS"
+    },
+    {
+        "title": "Computer Networks",
+        "code": "NTM313",
+        "level": 3,
+        "semester": 1,
+        "credit_hours": 3,
+        "department": "CS"
+    },
+    {
+        "title": "Software Engineering (1)",
+        "code": "CSM314",
+        "level": 3,
+        "semester": 1,
+        "credit_hours": 3,
+        "department": "CS"
+    },
+    {
+        "title": "Artificial Intelligence",
+        "code": "AIM315",
+        "level": 3,
+        "semester": 1,
+        "credit_hours": 3,
+        "department": "CS"
+    },
+    {
+        "title": "Electric (1)",
+        "code": "CSE316",
+        "level": 3,
+        "semester": 1,
+        "credit_hours": 3,
+        "department": "CS"
+    },
+
+    {
+        "title": "Research Methods & Ethics",
+        "code": "URM321",
+        "level": 3,
+        "semester": 2,
+        "credit_hours": 2,
+        "department": "CS"
+    },
+    {
+        "title": "Theory of Compilers",
+        "code": "CSM322",
+        "level": 3,
+        "semester": 2,
+        "credit_hours": 3,
+        "department": "CS"
+    },
+    {
+        "title": "Distributed Comp Sys",
+        "code": "CSM323",
+        "level": 3,
+        "semester": 2,
+        "credit_hours": 3,
+        "department": "CS"
+    },
+    {
+        "title": "Computer Graphics",
+        "code": "CSM324",
+        "level": 3,
+        "semester": 2,
+        "credit_hours": 3,
+        "department": "CS"
+    },
+    {
+        "title": "Theory of Algorithms",
+        "code": "CSM325",
+        "level": 3,
+        "semester": 2,
+        "credit_hours": 4,
+        "department": "CS"
+    },
+    {
+        "title": "Elective (2)",
+        "code": "CSM326",
+        "level": 3,
+        "semester": 2,
+        "credit_hours": 3,
+        "department": "CS"
+    },
+    {
+        "title": "Web App Development",
+        "code": "ISM411",
+        "level": 4,
+        "semester": 1,
+        "credit_hours": 3,
+        "department": "CS"
+    },
+    {
+        "title": "Cloud Computing",
+        "code": "NTM412",
+        "level": 4,
+        "semester": 1,
+        "credit_hours": 3,
+        "department": "CS"
+    },
+    {
+        "title": "Database Manag. Sys. (2)",
+        "code": "ISM413",
+        "level": 4,
+        "semester": 1,
+        "credit_hours": 3,
+        "department": "CS"
+    },
+    {
+        "title": "Software Engineering (2)",
+        "code": "CSM414",
+        "level": 4,
+        "semester": 1,
+        "credit_hours": 3,
+        "department": "CS"
+    },
+    {
+        "title": "Elective (3)",
+        "code": "CSE415",
+        "level": 4,
+        "semester": 1,
+        "credit_hours": 3,
+        "department": "CS"
+    },
+    {
+        "title": "Project (1)",
+        "code": "FRM416",
+        "level": 4,
+        "semester": 1,
+        "credit_hours": 3,
+        "department": "CS"
+    },
+
+    {
+        "title": "Communication Skills",
+        "code": "URM421",
+        "level": 4,
+        "semester": 2,
+        "credit_hours": 2,
+        "department": "CS"
+    },
+    {
+        "title": "Internet of Things",
+        "code": "NTM422",
+        "level": 4,
+        "semester": 2,
+        "credit_hours": 3,
+        "department": "CS"
+    },
+    {
+        "title": "Human Comp. Inter.",
+        "code": "CSM423",
+        "level": 4,
+        "semester": 2,
+        "credit_hours": 4,
+        "department": "CS"
+    },
+    {
+        "title": "Parallel Programming",
+        "code": "CSM424",
+        "level": 4,
+        "semester": 2,
+        "credit_hours": 3,
+        "department": "CS"
+    },
+    {
+        "title": "Elective (4)",
+        "code": "CSE425",
+        "level": 4,
+        "semester": 2,
+        "credit_hours": 3,
+        "department": "CS"
+    },
+    {
+        "title": "Project (2)",
+        "code": "FRM426",
+        "level": 4,
+        "semester": 2,
+        "credit_hours": 3,
+        "department": "CS"
+    },
+    {
+        "title": "Field Training",
+        "code": "FRM429",
+        "level": 4,
+        "semester": 2,
+        "credit_hours": 0,
+        "department": "CS"
+    },
+    {
+        "title": "Operating Systems",
+        "code": "CSM311",
+        "level": 3,
+        "semester": 1,
+        "credit_hours": 3,
+        "department": "NT"
+    },
+    {
+        "title": "Operations Research (1)",
+        "code": "ISM312",
+        "level": 3,
+        "semester": 1,
+        "credit_hours": 3,
+        "department": "NT"
+    },
+    {
+        "title": "Computer Networks",
+        "code": "NTM313",
+        "level": 3,
+        "semester": 1,
+        "credit_hours": 3,
+        "department": "NT"
+    },
+    {
+        "title": "Software Engineer",
+        "code": "CSM314",
+        "level": 3,
+        "semester": 1,
+        "credit_hours": 3,
+        "department": "NT"
+    },
+    {
+        "title": "Optical Network",
+        "code": "NTM315",
+        "level": 3,
+        "semester": 1,
+        "credit_hours": 3,
+        "department": "NT"
+    },
+    {
+        "title": "Elective (1)",
+        "code": "NTE316",
+        "level": 3,
+        "semester": 1,
+        "credit_hours": 3,
+        "department": "NT"
+    },
+    {
+        "title": "Research methods & Ethics",
+        "code": "URM321",
+        "level": 3,
+        "semester": 2,
+        "credit_hours": 2,
+        "department": "NT"
+    },
+    {
+        "title": "Network Automation",
+        "code": "NTM322",
+        "level": 3,
+        "semester": 2,
+        "credit_hours": 3,
+        "department": "NT"
+    },
+    {
+        "title": "Distributed Comp. Systems",
+        "code": "CSM323",
+        "level": 3,
+        "semester": 2,
+        "credit_hours": 3,
+        "department": "NT"
+    },
+    {
+        "title": "Cybersecurity",
+        "code": "NTM324",
+        "level": 3,
+        "semester": 2,
+        "credit_hours": 3,
+        "department": "NT"
+    },
+    {
+        "title": "Routing and switching",
+        "code": "NTM325",
+        "level": 3,
+        "semester": 2,
+        "credit_hours": 4,
+        "department": "NT"
+    },
+    {
+        "title": "Elective (2)",
+        "code": "NTE326",
+        "level": 3,
+        "semester": 2,
+        "credit_hours": 3,
+        "department": "NT"
+    },
+    {
+        "title": "Web Applications Development",
+        "code": "ISM411",
+        "level": 4,
+        "semester": 1,
+        "credit_hours": 3,
+        "department": "NT"
+    },
+    {
+        "title": "Cloud Computing",
+        "code": "NTM412",
+        "level": 4,
+        "semester": 1,
+        "credit_hours": 3,
+        "department": "NT"
+    },
+    {
+        "title": "System Administration (1)",
+        "code": "NTM413",
+        "level": 4,
+        "semester": 1,
+        "credit_hours": 3,
+        "department": "NT"
+    },
+    {
+        "title": "Wireless System Administration",
+        "code": "NTM414",
+        "level": 4,
+        "semester": 1,
+        "credit_hours": 3,
+        "department": "NT"
+    },
+    {
+        "title": "Elective (3)",
+        "code": "NTE415",
+        "level": 4,
+        "semester": 1,
+        "credit_hours": 3,
+        "department": "NT"
+    },
+    {
+        "title": "Project (1)",
+        "code": "FRM416",
+        "level": 4,
+        "semester": 1,
+        "credit_hours": 3,
+        "department": "NT"
+    },
+    {
+        "title": "Communication Skills",
+        "code": "URM421",
+        "level": 4,
+        "semester": 2,
+        "credit_hours": 2,
+        "department": "NT"
+    },
+    {
+        "title": "Internet of Things",
+        "code": "NTM422",
+        "level": 4,
+        "semester": 2,
+        "credit_hours": 3,
+        "department": "NT"
+    },
+    {
+        "title": "System Administration (2)",
+        "code": "NTM423",
+        "level": 4,
+        "semester": 2,
+        "credit_hours": 3,
+        "department": "NT"
+    },
+    {
+        "title": "Mobile Networks",
+        "code": "NTM424",
+        "level": 4,
+        "semester": 2,
+        "credit_hours": 4,
+        "department": "NT"
+    },
+    {
+        "title": "Electric (4)",
+        "code": "NTE425",
+        "level": 4,
+        "semester": 2,
+        "credit_hours": 3,
+        "department": "NT"
+    },
+    {
+        "title": "Project (2)",
+        "code": "FRM426",
+        "level": 4,
+        "semester": 2,
+        "credit_hours": 3,
+        "department": "NT"
+    },
+    {
+        "title": "Field Training",
+        "code": "FRM429",
+        "level": 4,
+        "semester": 2,
+        "credit_hours": 0,
+        "department": "NT"
+    },
+    {
+        "title": "Operating Systems",
+        "code": "CSM311",
+        "level": 3,
+        "semester": 1,
+        "credit_hours": 3,
+        "department": "IS"
+    },
+    {
+        "title": "Operations Research (1)",
+        "code": "ISM312",
+        "level": 3,
+        "semester": 1,
+        "credit_hours": 3,
+        "department": "IS"
+    },
+    {
+        "title": "Computer Networks",
+        "code": "NTM313",
+        "level": 3,
+        "semester": 1,
+        "credit_hours": 3,
+        "department": "IS"
+    },
+    {
+        "title": "Systems Analysis and Design",
+        "code": "ISM314",
+        "level": 3,
+        "semester": 1,
+        "credit_hours": 3,
+        "department": "IS"
+    },
+    {
+        "title": "Information Systems",
+        "code": "ISM315",
+        "level": 3,
+        "semester": 1,
+        "credit_hours": 3,
+        "department": "IS"
+    },
+    {
+        "title": "Elective (1)",
+        "code": "ISE316",
+        "level": 3,
+        "semester": 1,
+        "credit_hours": 3,
+        "department": "IS"
+    },
+
+    {
+        "title": "Research methods & Ethics",
+        "code": "URM321",
+        "level": 3,
+        "semester": 2,
+        "credit_hours": 2,
+        "department": "IS"
+    },
+    {
+        "title": "Operations Research (2)",
+        "code": "ISM322",
+        "level": 3,
+        "semester": 2,
+        "credit_hours": 3,
+        "department": "IS"
+    },
+    {
+        "title": "Distributed Comp. Systems",
+        "code": "CSM323",
+        "level": 3,
+        "semester": 2,
+        "credit_hours": 3,
+        "department": "IS"
+    },
+    {
+        "title": "Information Retrieval",
+        "code": "ISM324",
+        "level": 3,
+        "semester": 2,
+        "credit_hours": 3,
+        "department": "IS"
+    },
+    {
+        "title": "Modeling and Simulation",
+        "code": "ISM325",
+        "level": 3,
+        "semester": 2,
+        "credit_hours": 4,
+        "department": "IS"
+    },
+    {
+        "title": "Elective (2)",
+        "code": "ISE326",
+        "level": 3,
+        "semester": 2,
+        "credit_hours": 3,
+        "department": "IS"
+    },
+
+    {
+        "title": "Web Applications Development",
+        "code": "ISM411",
+        "level": 4,
+        "semester": 1,
+        "credit_hours": 3,
+        "department": "IS"
+    },
+    {
+        "title": "Business Intelligence",
+        "code": "ISM412",
+        "level": 4,
+        "semester": 1,
+        "credit_hours": 3,
+        "department": "IS"
+    },
+    {
+        "title": "Database Systems (2)",
+        "code": "ISM413",
+        "level": 4,
+        "semester": 1,
+        "credit_hours": 3,
+        "department": "IS"
+    },
+    {
+        "title": "E-Commerce",
+        "code": "ISM414",
+        "level": 4,
+        "semester": 1,
+        "credit_hours": 3,
+        "department": "IS"
+    },
+    {
+        "title": "Elective (3)",
+        "code": "ISE415",
+        "level": 4,
+        "semester": 1,
+        "credit_hours": 3,
+        "department": "IS"
+    },
+    {
+        "title": "Project (1)",
+        "code": "FRM416",
+        "level": 4,
+        "semester": 1,
+        "credit_hours": 3,
+        "department": "IS"
+    },
+
+    {
+        "title": "Communication Skills",
+        "code": "URM421",
+        "level": 4,
+        "semester": 2,
+        "credit_hours": 2,
+        "department": "IS"
+    },
+    {
+        "title": "Information Security",
+        "code": "ISM422",
+        "level": 4,
+        "semester": 2,
+        "credit_hours": 3,
+        "department": "IS"
+    },
+    {
+        "title": "Big Data",
+        "code": "ISM423",
+        "level": 4,
+        "semester": 2,
+        "credit_hours": 4,
+        "department": "IS"
+    },
+    {
+        "title": "Knowledge Management",
+        "code": "ISM424",
+        "level": 4,
+        "semester": 2,
+        "credit_hours": 3,
+        "department": "IS"
+    },
+    {
+        "title": "Elective (4)",
+        "code": "ISE425",
+        "level": 4,
+        "semester": 2,
+        "credit_hours": 3,
+        "department": "IS"
+    },
+    {
+        "title": "Project (2)",
+        "code": "FRM426",
+        "level": 4,
+        "semester": 2,
+        "credit_hours": 3,
+        "department": "IS"
+    },
+    {
+        "title": "Field Training",
+        "code": "FRM429",
+        "level": 4,
+        "semester": 2,
+        "credit_hours": 0,
+        "department": "IS"
+    }
+]

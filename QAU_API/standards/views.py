@@ -1,5 +1,7 @@
 import os
 
+# Import course models
+from courses.models import Course, CourseFile
 from django.conf import settings
 from django.http import FileResponse, HttpResponse
 from django.shortcuts import get_object_or_404
@@ -39,6 +41,8 @@ class AcademicYearViewSet(viewsets.ModelViewSet):
     - Sort by start_date
     - Search by start_date, end_date
     - Pagination
+    - Create new year based on latest year structure (Admin only)
+    - View complete year structure (structure action)
     """
 
     queryset = AcademicYear.objects.all()
@@ -51,9 +55,218 @@ class AcademicYearViewSet(viewsets.ModelViewSet):
     ordering = ["-start_date"]
 
     def get_permissions(self):
-        if self.action in ["create", "update", "partial_update", "destroy"]:
+        if self.action in ["create", "update", "partial_update", "destroy", "repeat_schema", "create_new_year"]:
             return [IsAdminUser()]
         return [IsAuthenticated()]
+
+    @action(detail=True, methods=["get"])
+    def structure(self, request, pk=None):
+        """
+        Get the complete hierarchical structure of an academic year.
+        This includes all standards, pointers, elements, and courses,
+        but excludes user information and actual file content.
+
+        Returns:
+        - standards: List of standards with their pointers and elements
+        - courses: List of courses with their course files
+        """
+        academic_year = self.get_object()
+
+        # Get all standards for this year with related objects
+        standards_data = []
+        standards = Standard.objects.filter(academic_year=academic_year)
+
+        for standard in standards:
+            standard_data = {"id": standard.id, "title": standard.title, "type": standard.type, "pointers": []}
+
+            # Get pointers for this standard
+            pointers = Pointer.objects.filter(standard=standard)
+            for pointer in pointers:
+                pointer_data = {"id": pointer.id, "title": pointer.title, "elements": []}
+
+                # Get elements for this pointer
+                elements = Element.objects.filter(pointer=pointer)
+                for element in elements:
+                    element_data = {"id": element.id, "title": element.title, "attachments": []}
+
+                    # Get attachments for this element (excluding file content and user info)
+                    attachments = Attachment.objects.filter(element=element)
+                    for attachment in attachments:
+                        element_data["attachments"].append({"id": attachment.id, "title": attachment.title, "has_file": bool(attachment.file)})
+
+                    pointer_data["elements"].append(element_data)
+
+                standard_data["pointers"].append(pointer_data)
+
+            standards_data.append(standard_data)
+
+        # Get all courses for this year with related objects
+        courses_data = []
+        courses = Course.objects.filter(academic_year=academic_year)
+
+        for course in courses:
+            course_data = {
+                "id": course.id,
+                "title": course.title,
+                "code": course.code,
+                "level": course.level,
+                "semester": course.semester,
+                "credit_hours": course.credit_hours,
+                "department": course.department,
+                "course_files": [],
+            }
+
+            # Get course files for this course (excluding file content and user info)
+            course_files = CourseFile.objects.filter(course=course)
+            for course_file in course_files:
+                course_data["course_files"].append(
+                    {"id": course_file.id, "title": course_file.title, "has_file": bool(course_file.file) if hasattr(course_file, "file") else False}
+                )
+
+            courses_data.append(course_data)
+
+        # Combine the data
+        structure_data = {
+            "academic_year": {"id": academic_year.id, "start_date": academic_year.start_date, "end_date": academic_year.end_date, "status": academic_year.status},
+            "standards": standards_data,
+            "courses": courses_data,
+        }
+
+        return Response(structure_data)
+
+    @action(detail=False, methods=["post"])
+    def create_new_year(self, request):
+        """
+        Create a new academic year and automatically copy all structure (standards, pointers, elements)
+        and courses (with course files) from the latest academic year.
+        Does not copy attachment files or permissions.
+
+        Required POST data:
+        - start_date: Start date of new academic year (YYYY-MM-DD)
+        - end_date: End date of new academic year (YYYY-MM-DD)
+        - status: Status of new academic year (ACTIVE or ARCHIVED)
+        """
+        # Get the data for the new year
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+
+        # Find the latest academic year to copy from
+        latest_year = AcademicYear.objects.order_by("-start_date").first()
+        if not latest_year:
+            return Response(
+                {"detail": "No existing academic year found to copy from."},
+                status=status.HTTP_404_NOT_FOUND,
+            )
+
+        # Create the new academic year
+        new_academic_year = serializer.save()
+
+        # Copy standards and their related objects
+        standards_copied = self._copy_standards(latest_year, new_academic_year)
+
+        # Copy courses and their related objects
+        courses_copied = self._copy_courses(latest_year, new_academic_year)
+
+        # Combine the copied counts
+        copied_count = {**standards_copied, **courses_copied}
+
+        return Response(
+            {
+                "detail": f"Successfully created new academic year {new_academic_year} with structure copied from {latest_year}.",
+                "academic_year": serializer.data,
+                "copied_count": copied_count,
+            },
+            status=status.HTTP_201_CREATED,
+        )
+
+    def _copy_standards(self, source_academic_year, target_academic_year):
+        """Helper method to copy standards and related objects from source to target academic year."""
+        copied_count = {
+            "standards": 0,
+            "pointers": 0,
+            "elements": 0,
+            "attachments": 0,
+        }
+
+        # Get all standards from source
+        source_standards = Standard.objects.filter(academic_year=source_academic_year)
+
+        for source_standard in source_standards:
+            # Create new standard in target academic year
+            new_standard = Standard.objects.create(
+                academic_year=target_academic_year,
+                title=source_standard.title,
+                type=source_standard.type,
+            )
+            copied_count["standards"] += 1
+
+            # Copy pointers
+            source_pointers = Pointer.objects.filter(standard=source_standard)
+            for source_pointer in source_pointers:
+                new_pointer = Pointer.objects.create(
+                    standard=new_standard,
+                    title=source_pointer.title,
+                )
+                copied_count["pointers"] += 1
+
+                # Copy elements
+                source_elements = Element.objects.filter(pointer=source_pointer)
+                for source_element in source_elements:
+                    new_element = Element.objects.create(
+                        pointer=new_pointer,
+                        title=source_element.title,
+                    )
+                    copied_count["elements"] += 1
+
+                    # Create empty attachment placeholders (no files or permissions)
+                    source_attachments = Attachment.objects.filter(element=source_element)
+                    for source_attachment in source_attachments:
+                        Attachment.objects.create(
+                            element=new_element,
+                            title=source_attachment.title,
+                        )
+                        copied_count["attachments"] += 1
+
+        return copied_count
+
+    def _copy_courses(self, source_academic_year, target_academic_year):
+        """Helper method to copy courses and course files from source to target academic year."""
+        copied_count = {
+            "courses": 0,
+            "course_files": 0,
+        }
+
+        # Get all courses from source
+        source_courses = Course.objects.filter(academic_year=source_academic_year)
+
+        for source_course in source_courses:
+            # Create new course in target academic year with same attributes except ID, academic_year
+            # Note: We keep the same professor assignment
+            new_course = Course.objects.create(
+                academic_year=target_academic_year,
+                professor=source_course.professor,
+                title=source_course.title,
+                code=f"{source_course.code}_{target_academic_year.start_date.year}",  # Make code unique for new year
+                level=source_course.level,
+                semester=source_course.semester,
+                credit_hours=source_course.credit_hours,
+                department=source_course.department,
+            )
+            copied_count["courses"] += 1
+
+            # Copy course files
+            source_course_files = CourseFile.objects.filter(course=source_course)
+            for source_file in source_course_files:
+                # Create empty course file (no attachments)
+                new_file = CourseFile.objects.create(
+                    course=new_course,
+                    title=source_file.title,
+                )
+                copied_count["course_files"] += 1
+
+                # Note: We do not copy CourseAttachments as they contain actual files
+
+        return copied_count
 
 
 class StandardViewSet(viewsets.ModelViewSet):

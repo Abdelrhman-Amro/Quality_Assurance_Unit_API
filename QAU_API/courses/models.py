@@ -39,7 +39,7 @@ class Course(models.Model):
     academic_year = models.ForeignKey(AcademicYear, on_delete=models.CASCADE, related_name="courses")
     professor = models.ForeignKey(User, on_delete=models.SET_NULL, related_name="courses", null=True)
     title = models.CharField(max_length=255)
-    code = models.CharField(max_length=50, unique=True)
+    code = models.CharField(max_length=50)
     level = models.IntegerField(choices=Level.choices)
     semester = models.IntegerField(choices=Semester.choices)
     credit_hours = models.IntegerField(choices=CreditHours.choices)
