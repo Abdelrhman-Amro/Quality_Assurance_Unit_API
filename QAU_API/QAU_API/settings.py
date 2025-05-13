@@ -3,6 +3,9 @@ from pathlib import Path
 
 import environ
 
+# import corsheaders
+
+
 env = environ.Env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.

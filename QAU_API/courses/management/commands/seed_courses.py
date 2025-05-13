@@ -44,7 +44,14 @@ class Command(BaseCommand):
             professor = professors.first()
 
         # get year by id
-        year = AcademicYear.objects.filter(id="32d51db1-883d-4653-9eba-4ab72fe34d44").first()
+        # year = AcademicYear.objects.filter(id="32d51db1-883d-4653-9eba-4ab72fe34d44").first()
+        # CREATE ACADEMIC YEAR
+        year = AcademicYear.objects.create(
+            title="2025-2030",
+            start_date="2025-09-01",
+            end_date="2030-06-30",
+            status=AcademicYear.Status.ACTIVE,
+        )
         self._create_courses_for_year(year, professor, courses_data, course_files_data)
 
         # # Get active academic years

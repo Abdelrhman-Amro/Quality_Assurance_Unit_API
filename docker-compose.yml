@@ -22,7 +22,7 @@ services:
             - DJANGO_SUPERUSER_PASSWORD=${DJANGO_SUPERUSER_PASSWORD}
         command: >
             sh -c "python QAU_API/manage.py migrate --noinput &&
-                pip install --no-cache-dir -r requirements.txt &&
+                pip install --no-cache-dir -r QAU_API/requirements.txt &&
                 python QAU_API/manage.py runserver 0.0.0.0:8000"
 
     # PostgreSQL database
@@ -30,7 +30,7 @@ services:
         image: postgres:16
         restart: always
         volumes:
-            - postgres_data:/var/lib/postgresql/data/
+            - postgres_data_v2:/var/lib/postgresql/data/
         environment:
             - POSTGRES_DB=${POSTGRES_DB}
             - POSTGRES_USER=${POSTGRES_USER}
@@ -39,4 +39,4 @@ services:
             - "5432:5432"
 
 volumes:
-    postgres_data:
+    postgres_data_v2:
