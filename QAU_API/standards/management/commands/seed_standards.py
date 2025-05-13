@@ -39,7 +39,7 @@ class Command(BaseCommand):
         if not admin_users.exists():
             self.stdout.write(self.style.WARNING("No admin users found. Creating standards without assignments."))
 
-        year = AcademicYear.objects.filter(id="6fed8a52-d177-4379-b2d9-2980c75ecdb6").first()
+        year = AcademicYear.objects.filter(id="dae41c91-df3c-4cd0-8b3a-df292aa7b5f9").first()
         self._create_standards_for_year(year, standards_data, admin_users)
 
         # # Create active academic years
@@ -93,12 +93,14 @@ class Command(BaseCommand):
         """Create standards for a specific academic year using JSON data"""
         for i, standard_data in enumerate(standards_data, 1):
             # Alternate between ACADEMIC and PRAGMATIC types
-            standard_type = Standard.Type.ACADEMIC if i % 2 == 1 else Standard.Type.PRAGMATIC
+            # standard_type = (
+            #     Standard.Type.ACADEMIC if i % 2 == 1 else Standard.Type.PRAGMATIC
+            # )
 
             standard = Standard.objects.create(
                 academic_year=academic_year,
                 title=standard_data["title"],
-                type=standard_type,
+                type=standard_data["type"],
             )
 
             # Assign users if available

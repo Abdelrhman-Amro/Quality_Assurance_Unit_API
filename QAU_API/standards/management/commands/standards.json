@@ -1,61 +1,1393 @@
 [
     {
-        "title": "معيار الجودة الأكاديمية",
+        "title": "1 رسالة وإدارة البرنامج",
+        "type": "PRAGMATIC",
         "pointers": [
             {
-                "title": "التدريس الفعّال",
+                "title": "مؤشر 1.1",
                 "elements": [
                     {
-                        "title": "تصميم المنهج",
-                        "attachments": [
-                            "الخطة الدراسية.pdf",
-                            "توصيف المقرر.docx"
-                        ]
+                        "title": "مرفق 1.1.1",
+                        "attachments": ["ملف 1", "ملف 2"]
                     },
                     {
-                        "title": "تنفيذ الأنشطة الصفية",
-                        "attachments": [
-                            "صور من المحاضرات",
-                            "نموذج تقييم النشاط"
-                        ]
+                        "title": "مرفق 1.1.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 1.1.3",
+                        "attachments": ["ملف 1", "ملف 2"]
                     }
                 ]
             },
             {
-                "title": "تقييم الأداء",
+                "title": "مؤشر 1.2",
                 "elements": [
                     {
-                        "title": "استبيانات الطلاب",
-                        "attachments": [
-                            "نتائج الاستبيان.xlsx",
-                            "تقرير التحليل.pdf"
-                        ]
+                        "title": "مرفق 1.2.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 1.2.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 1.2.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            },
+            {
+                "title": "مؤشر 1.3",
+                "elements": [
+                    {
+                        "title": "مرفق 1.3.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 1.3.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 1.3.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            },
+            {
+                "title": "مؤشر 1.4",
+                "elements": [
+                    {
+                        "title": "مرفق 1.4.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 1.4.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 1.4.3",
+                        "attachments": ["ملف 1", "ملف 2"]
                     }
                 ]
             }
         ]
     },
     {
-        "title": "معيار البحث العلمي",
+        "title": "تصميم البرنامج 2",
+        "type": "PRAGMATIC",
         "pointers": [
             {
-                "title": "الإنتاج البحثي",
+                "title": "مؤشر 2.1",
                 "elements": [
                     {
-                        "title": "الأبحاث المنشورة",
-                        "attachments": ["قائمة الأبحاث.pdf", "رابط Scopus"]
+                        "title": "مرفق 2.1.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 2.1.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 2.1.3",
+                        "attachments": ["ملف 1", "ملف 2"]
                     }
                 ]
             },
             {
-                "title": "التمويل والدعم",
+                "title": "مؤشر 2.2",
                 "elements": [
                     {
-                        "title": "المشاريع الممولة",
-                        "attachments": [
-                            "قائمة المشاريع.docx",
-                            "تقرير التمويل السنوي"
-                        ]
+                        "title": "مرفق 2.2.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 2.2.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 2.2.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            },
+            {
+                "title": "مؤشر 2.3",
+                "elements": [
+                    {
+                        "title": "مرفق 2.3.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 2.3.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 2.3.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            },
+            {
+                "title": "مؤشر 2.4",
+                "elements": [
+                    {
+                        "title": "مرفق 2.4.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 2.4.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 2.4.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "3 التعليم والتعلم والتقييم",
+        "type": "PRAGMATIC",
+        "pointers": [
+            {
+                "title": "مؤشر 3.1",
+                "elements": [
+                    {
+                        "title": "مرفق 3.1.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 3.1.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 3.1.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            },
+            {
+                "title": "مؤشر 3.2",
+                "elements": [
+                    {
+                        "title": "مرفق 3.2.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 3.2.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 3.2.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            },
+            {
+                "title": "مؤشر 3.3",
+                "elements": [
+                    {
+                        "title": "مرفق 3.3.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 3.3.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 3.3.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            },
+            {
+                "title": "مؤشر 3.4",
+                "elements": [
+                    {
+                        "title": "مرفق 3.4.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 3.4.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 3.4.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "4 الطلاب والخريجون",
+        "type": "PRAGMATIC",
+        "pointers": [
+            {
+                "title": "مؤشر 4.1",
+                "elements": [
+                    {
+                        "title": "مرفق 4.1.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 4.1.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 4.1.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            },
+            {
+                "title": "مؤشر 4.2",
+                "elements": [
+                    {
+                        "title": "مرفق 4.2.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 4.2.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 4.2.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            },
+            {
+                "title": "مؤشر 4.3",
+                "elements": [
+                    {
+                        "title": "مرفق 4.3.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 4.3.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 4.3.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            },
+            {
+                "title": "مؤشر 4.4",
+                "elements": [
+                    {
+                        "title": "مرفق 4.4.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 4.4.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 4.4.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "5 هيئة التدريس",
+        "type": "PRAGMATIC",
+        "pointers": [
+            {
+                "title": "مؤشر 5.1",
+                "elements": [
+                    {
+                        "title": "مرفق 5.1.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 5.1.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 5.1.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            },
+            {
+                "title": "مؤشر 5.2",
+                "elements": [
+                    {
+                        "title": "مرفق 5.2.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 5.2.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 5.2.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            },
+            {
+                "title": "مؤشر 5.3",
+                "elements": [
+                    {
+                        "title": "مرفق 5.3.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 5.3.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 5.3.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            },
+            {
+                "title": "مؤشر 5.4",
+                "elements": [
+                    {
+                        "title": "مرفق 5.4.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 5.4.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 5.4.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "6 مصادر التعلم والمرافق والتجهيزات",
+        "type": "PRAGMATIC",
+        "pointers": [
+            {
+                "title": "مؤشر 6.1",
+                "elements": [
+                    {
+                        "title": "مرفق 6.1.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 6.1.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 6.1.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            },
+            {
+                "title": "مؤشر 6.2",
+                "elements": [
+                    {
+                        "title": "مرفق 6.2.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 6.2.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 6.2.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            },
+            {
+                "title": "مؤشر 6.3",
+                "elements": [
+                    {
+                        "title": "مرفق 6.3.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 6.3.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 6.3.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            },
+            {
+                "title": "مؤشر 6.4",
+                "elements": [
+                    {
+                        "title": "مرفق 6.4.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 6.4.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 6.4.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "7 البحوث العلمية والمشاريع",
+        "type": "PRAGMATIC",
+        "pointers": [
+            {
+                "title": "مؤشر 7.1",
+                "elements": [
+                    {
+                        "title": "مرفق 7.1.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 7.1.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 7.1.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            },
+            {
+                "title": "مؤشر 7.2",
+                "elements": [
+                    {
+                        "title": "مرفق 7.2.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 7.2.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 7.2.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            },
+            {
+                "title": "مؤشر 7.3",
+                "elements": [
+                    {
+                        "title": "مرفق 7.3.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 7.3.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 7.3.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            },
+            {
+                "title": "مؤشر 7.4",
+                "elements": [
+                    {
+                        "title": "مرفق 7.4.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 7.4.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 7.4.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "1 التخطيط الاستراتيجي",
+        "type": "ACADEMIC",
+        "pointers": [
+            {
+                "title": "مؤشر 1.1",
+                "elements": [
+                    {
+                        "title": "مرفق 1.1.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 1.1.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 1.1.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            },
+            {
+                "title": "مؤشر 1.2",
+                "elements": [
+                    {
+                        "title": "مرفق 1.2.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 1.2.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 1.2.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            },
+            {
+                "title": "مؤشر 1.3",
+                "elements": [
+                    {
+                        "title": "مرفق 1.3.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 1.3.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 1.3.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            },
+            {
+                "title": "مؤشر 1.4",
+                "elements": [
+                    {
+                        "title": "مرفق 1.4.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 1.4.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 1.4.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "2 تطوير المناهج الدراسية",
+        "type": "ACADEMIC",
+        "pointers": [
+            {
+                "title": "مؤشر 2.1",
+                "elements": [
+                    {
+                        "title": "مرفق 2.1.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 2.1.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    { "title": "مرفق 2.1.3", "attachments": ["ملف 1", "ملف 2"] }
+                ]
+            },
+            {
+                "title": "مؤشر 2.2",
+                "elements": [
+                    {
+                        "title": "مرفق 2.2.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 2.2.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    { "title": "مرفق 2.2.3", "attachments": ["ملف 1", "ملف 2"] }
+                ]
+            },
+            {
+                "title": "مؤشر 2.3",
+                "elements": [
+                    {
+                        "title": "مرفق 2.3.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 2.3.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    { "title": "مرفق 2.3.3", "attachments": ["ملف 1", "ملف 2"] }
+                ]
+            },
+            {
+                "title": "مؤشر 2.4",
+                "elements": [
+                    {
+                        "title": "مرفق 2.4.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 2.4.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    { "title": "مرفق 2.4.3", "attachments": ["ملف 1", "ملف 2"] }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "3 جودة التدريس والتعلم",
+        "type": "ACADEMIC",
+        "pointers": [
+            {
+                "title": "مؤشر 3.1",
+                "elements": [
+                    {
+                        "title": "مرفق 3.1.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 3.1.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 3.1.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            },
+            {
+                "title": "مؤشر 3.2",
+                "elements": [
+                    {
+                        "title": "مرفق 3.2.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 3.2.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 3.2.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            },
+            {
+                "title": "مؤشر 3.3",
+                "elements": [
+                    {
+                        "title": "مرفق 3.3.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 3.3.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 3.3.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            },
+            {
+                "title": "مؤشر 3.4",
+                "elements": [
+                    {
+                        "title": "مرفق 3.4.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 3.4.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 3.4.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "4 تقييم الطلاب",
+        "type": "ACADEMIC",
+        "pointers": [
+            {
+                "title": "مؤشر 4.1",
+                "elements": [
+                    {
+                        "title": "مرفق 4.1.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 4.1.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 4.1.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            },
+            {
+                "title": "مؤشر 4.2",
+                "elements": [
+                    {
+                        "title": "مرفق 4.2.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 4.2.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 4.2.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            },
+            {
+                "title": "مؤشر 4.3",
+                "elements": [
+                    {
+                        "title": "مرفق 4.3.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 4.3.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 4.3.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            },
+            {
+                "title": "مؤشر 4.4",
+                "elements": [
+                    {
+                        "title": "مرفق 4.4.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 4.4.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 4.4.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "5 تطوير أعضاء هيئة التدريس",
+        "type": "ACADEMIC",
+        "pointers": [
+            {
+                "title": "مؤشر 5.1",
+                "elements": [
+                    {
+                        "title": "مرفق 5.1.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 5.1.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 5.1.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            },
+            {
+                "title": "مؤشر 5.2",
+                "elements": [
+                    {
+                        "title": "مرفق 5.2.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 5.2.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 5.2.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            },
+            {
+                "title": "مؤشر 5.3",
+                "elements": [
+                    {
+                        "title": "مرفق 5.3.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 5.3.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 5.3.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            },
+            {
+                "title": "مؤشر 5.4",
+                "elements": [
+                    {
+                        "title": "مرفق 5.4.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 5.4.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 5.4.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "6 دعم الطلاب",
+        "type": "ACADEMIC",
+        "pointers": [
+            {
+                "title": "مؤشر 6.1",
+                "elements": [
+                    {
+                        "title": "مرفق 6.1.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 6.1.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 6.1.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            },
+            {
+                "title": "مؤشر 6.2",
+                "elements": [
+                    {
+                        "title": "مرفق 6.2.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 6.2.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 6.2.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            },
+            {
+                "title": "مؤشر 6.3",
+                "elements": [
+                    {
+                        "title": "مرفق 6.3.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 6.3.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 6.3.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            },
+            {
+                "title": "مؤشر 6.4",
+                "elements": [
+                    {
+                        "title": "مرفق 6.4.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 6.4.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 6.4.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "7 الأنشطة الطلابية",
+        "type": "ACADEMIC",
+        "pointers": [
+            {
+                "title": "مؤشر 7.1",
+                "elements": [
+                    {
+                        "title": "مرفق 7.1.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 7.1.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 7.1.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            },
+            {
+                "title": "مؤشر 7.2",
+                "elements": [
+                    {
+                        "title": "مرفق 7.2.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 7.2.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 7.2.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            },
+            {
+                "title": "مؤشر 7.3",
+                "elements": [
+                    {
+                        "title": "مرفق 7.3.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 7.3.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 7.3.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            },
+            {
+                "title": "مؤشر 7.4",
+                "elements": [
+                    {
+                        "title": "مرفق 7.4.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 7.4.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 7.4.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "8 الشراكات المجتمعية",
+        "type": "ACADEMIC",
+        "pointers": [
+            {
+                "title": "مؤشر 8.1",
+                "elements": [
+                    {
+                        "title": "مرفق 8.1.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 8.1.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 8.1.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            },
+            {
+                "title": "مؤشر 8.2",
+                "elements": [
+                    {
+                        "title": "مرفق 8.2.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 8.2.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 8.2.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            },
+            {
+                "title": "مؤشر 8.3",
+                "elements": [
+                    {
+                        "title": "مرفق 8.3.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 8.3.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 8.3.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            },
+            {
+                "title": "مؤشر 8.4",
+                "elements": [
+                    {
+                        "title": "مرفق 8.4.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 8.4.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 8.4.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "9 البحث العلمي",
+        "type": "ACADEMIC",
+        "pointers": [
+            {
+                "title": "مؤشر 9.1",
+                "elements": [
+                    {
+                        "title": "مرفق 9.1.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 9.1.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 9.1.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            },
+            {
+                "title": "مؤشر 9.2",
+                "elements": [
+                    {
+                        "title": "مرفق 9.2.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 9.2.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 9.2.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            },
+            {
+                "title": "مؤشر 9.3",
+                "elements": [
+                    {
+                        "title": "مرفق 9.3.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 9.3.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 9.3.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            },
+            {
+                "title": "مؤشر 9.4",
+                "elements": [
+                    {
+                        "title": "مرفق 9.4.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 9.4.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 9.4.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "10 ضمان الجودة",
+        "type": "ACADEMIC",
+        "pointers": [
+            {
+                "title": "مؤشر 10.1",
+                "elements": [
+                    {
+                        "title": "مرفق 10.1.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 10.1.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 10.1.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            },
+            {
+                "title": "مؤشر 10.2",
+                "elements": [
+                    {
+                        "title": "مرفق 10.2.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 10.2.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 10.2.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            },
+            {
+                "title": "مؤشر 10.3",
+                "elements": [
+                    {
+                        "title": "مرفق 10.3.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 10.3.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 10.3.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            },
+            {
+                "title": "مؤشر 10.4",
+                "elements": [
+                    {
+                        "title": "مرفق 10.4.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 10.4.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 10.4.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "11 العلاقات الدولية",
+        "type": "ACADEMIC",
+        "pointers": [
+            {
+                "title": "مؤشر 11.1",
+                "elements": [
+                    {
+                        "title": "مرفق 11.1.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 11.1.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 11.1.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            },
+            {
+                "title": "مؤشر 11.2",
+                "elements": [
+                    {
+                        "title": "مرفق 11.2.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 11.2.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 11.2.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            },
+            {
+                "title": "مؤشر 11.3",
+                "elements": [
+                    {
+                        "title": "مرفق 11.3.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 11.3.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 11.3.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            },
+            {
+                "title": "مؤشر 11.4",
+                "elements": [
+                    {
+                        "title": "مرفق 11.4.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 11.4.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 11.4.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "12 التطوير المؤسسي",
+        "type": "ACADEMIC",
+        "pointers": [
+            {
+                "title": "مؤشر 12.1",
+                "elements": [
+                    {
+                        "title": "مرفق 12.1.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 12.1.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 12.1.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            },
+            {
+                "title": "مؤشر 12.2",
+                "elements": [
+                    {
+                        "title": "مرفق 12.2.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 12.2.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 12.2.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            },
+            {
+                "title": "مؤشر 12.3",
+                "elements": [
+                    {
+                        "title": "مرفق 12.3.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 12.3.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 12.3.3",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    }
+                ]
+            },
+            {
+                "title": "مؤشر 12.4",
+                "elements": [
+                    {
+                        "title": "مرفق 12.4.1",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 12.4.2",
+                        "attachments": ["ملف 1", "ملف 2"]
+                    },
+                    {
+                        "title": "مرفق 12.4.3",
+                        "attachments": ["ملف 1", "ملف 2"]
                     }
                 ]
             }
