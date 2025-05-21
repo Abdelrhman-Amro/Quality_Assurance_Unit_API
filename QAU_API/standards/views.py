@@ -2,6 +2,7 @@ import os
 
 # Import course models
 from courses.models import Course, CourseFile
+from courses.serializers import CourseSerializer
 from django.conf import settings
 from django.http import FileResponse, HttpResponse
 from django.shortcuts import get_object_or_404
@@ -177,6 +178,47 @@ class AcademicYearViewSet(viewsets.ModelViewSet):
                 "copied_count": copied_count,
             },
             status=status.HTTP_201_CREATED,
+        )
+
+    @action(detail=True, methods=["get"])
+    def statistics(self, request, pk=None):
+        """
+        Get Number of standards and courses completed
+        """
+
+        academic_year = self.get_object()
+        standards = Standard.objects.filter(academic_year=academic_year)
+        courses = Course.objects.filter(academic_year=academic_year)
+
+        standards_serializer = StandardSerializer(standards, many=True)
+        courses_serializer = CourseSerializer(courses, many=True)
+
+        # Get the number of standards and courses
+        n_of_standards = len(standards)
+        n_of_courses = len(courses)
+
+        n_of_completed_standards = 0
+        n_of_completed_courses = 0
+        for standard in standards_serializer.data:
+            n_of_attachments = standard.get("n_of_attachments")
+            n_of_attachments_uploaded = standard.get("n_of_attachments_uploaded")
+            if n_of_attachments == n_of_attachments_uploaded:
+                n_of_completed_standards += 1
+
+        for course in courses_serializer.data:
+            n_of_course_files = course.get("n_of_course_files")
+            n_of_course_files_uploaded = course.get("n_of_course_files_uploaded")
+            if n_of_course_files == n_of_course_files_uploaded:
+                n_of_completed_courses += 1
+
+        return Response(
+            {
+                "n_of_standards": n_of_standards,
+                "n_of_courses": n_of_courses,
+                "n_of_completed_standards": n_of_completed_standards,
+                "n_of_completed_courses": n_of_completed_courses,
+            },
+            status=status.HTTP_200_OK,
         )
 
     def _copy_standards(self, source_academic_year, target_academic_year):

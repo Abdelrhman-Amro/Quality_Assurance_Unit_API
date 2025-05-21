@@ -33,23 +33,27 @@ class Command(BaseCommand):
         else:
             professor = professors.first()
 
-        # Get active academic years
-        active_years = AcademicYear.objects.filter(status=AcademicYear.Status.ACTIVE)
-        if not active_years.exists():
-            self.stdout.write(self.style.WARNING("No active academic years found. Skipping active year courses."))
-        else:
-            self.stdout.write(self.style.SUCCESS(f"Creating courses for {active_years.count()} active academic years"))
-            for year in active_years[:3]:  # Limit to 3 years as per docstring
-                self._create_courses_for_year(year, professor)
+        # # Get active academic years
+        # active_years = AcademicYear.objects.filter(status=AcademicYear.Status.ACTIVE)
+        # if not active_years.exists():
+        #     self.stdout.write(self.style.WARNING("No active academic years found. Skipping active year courses."))
+        # else:
+        #     self.stdout.write(self.style.SUCCESS(f"Creating courses for {active_years.count()} active academic years"))
+        #     for year in active_years[:3]:  # Limit to 3 years as per docstring
+        #         self._create_courses_for_year(year, professor)
 
-        # Get archived academic years
-        archived_years = AcademicYear.objects.filter(status=AcademicYear.Status.ARCHIVED)
-        if not archived_years.exists():
-            self.stdout.write(self.style.WARNING("No archived academic years found. Skipping archived year courses."))
-        else:
-            self.stdout.write(self.style.SUCCESS(f"Creating courses for {archived_years.count()} archived academic years"))
-            for year in archived_years[:3]:  # Limit to 3 years as per docstring
-                self._create_courses_for_year(year, professor)
+        # # Get archived academic years
+        # archived_years = AcademicYear.objects.filter(status=AcademicYear.Status.ARCHIVED)
+        # if not archived_years.exists():
+        #     self.stdout.write(self.style.WARNING("No archived academic years found. Skipping archived year courses."))
+        # else:
+        #     self.stdout.write(self.style.SUCCESS(f"Creating courses for {archived_years.count()} archived academic years"))
+        #     for year in archived_years[:3]:  # Limit to 3 years as per docstring
+        #         self._create_courses_for_year(year, professor)
+
+        # get year by id
+        year = AcademicYear.objects.filter(id="dae41c91-df3c-4cd0-8b3a-df292aa7b5f9").first()
+        self._create_courses_for_year(year, professor)
 
         self.stdout.write(self.style.SUCCESS("Successfully created all test data"))
 

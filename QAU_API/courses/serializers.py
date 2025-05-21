@@ -26,6 +26,9 @@ class CourseSerializer(serializers.ModelSerializer):
         source="professor",
     )
 
+    n_of_course_files = serializers.SerializerMethodField()
+    n_of_course_files_uploaded = serializers.SerializerMethodField()
+
     class Meta:
         model = Course
         fields = [
@@ -39,6 +42,8 @@ class CourseSerializer(serializers.ModelSerializer):
             "academic_year",
             "professor",
             "professor_id",
+            "n_of_course_files",
+            "n_of_course_files_uploaded",
             "created_at",
             "updated_at",
         ]
@@ -48,19 +53,36 @@ class CourseSerializer(serializers.ModelSerializer):
         level = data.get("level")
         department = data.get("department")
         if department is not None and (level is None or level <= 2):
-            raise serializers.ValidationError(
-                {"department": "Department can only be set if level is greater than 2."}
-            )
+            raise serializers.ValidationError({"department": "Department can only be set if level is greater than 2."})
         return data
+
+    def get_n_of_course_files(self, obj):
+        """Get the number of course files associated with the course."""
+        return obj.files.count()
+
+    def get_n_of_course_files_uploaded(self, obj):
+        """Get the number of course files uploaded in the course."""
+        attachments = CourseAttachment.objects.filter(course_file__course=obj)
+        count = 0
+        for attachment in attachments:
+            if attachment.file:
+                count += 1
+        return count
 
 
 class CourseFileSerializer(serializers.ModelSerializer):
     """Serializer for CourseFile model."""
 
+    attachments = serializers.SerializerMethodField()
+
     class Meta:
         model = CourseFile
-        fields = ["id", "title", "course", "created_at", "updated_at"]
+        fields = ["id", "title", "course", "created_at", "updated_at", "attachments"]
         read_only_fields = ["id", "created_at", "updated_at"]
+
+    def get_attachments(self, obj):
+        attachments = CourseAttachment.objects.filter(course_file=obj)
+        return CourseAttachmentSerializer(attachments, many=True, context=self.context).data
 
 
 class CourseAttachmentSerializer(serializers.ModelSerializer):

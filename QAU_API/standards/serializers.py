@@ -27,9 +27,7 @@ class AcademicYearSerializer(serializers.ModelSerializer):
         """Validate that start_date is before end_date."""
         if data.get("start_date") and data.get("end_date"):
             if data["start_date"] >= data["end_date"]:
-                raise serializers.ValidationError(
-                    {"end_date": "End date must be after start date."}
-                )
+                raise serializers.ValidationError({"end_date": "End date must be after start date."})
         return data
 
 
@@ -45,6 +43,9 @@ class StandardSerializer(serializers.ModelSerializer):
         source="assigned_to",
     )
 
+    n_of_attachments = serializers.SerializerMethodField()
+    n_of_attachments_uploaded = serializers.SerializerMethodField()
+
     class Meta:
         model = Standard
         fields = [
@@ -54,28 +55,75 @@ class StandardSerializer(serializers.ModelSerializer):
             "academic_year",
             "assigned_to",
             "assigned_to_ids",
+            "n_of_attachments",
+            "n_of_attachments_uploaded",
             "created_at",
             "updated_at",
         ]
         read_only_fields = ["id", "created_at", "updated_at"]
 
+    def get_n_of_attachments(self, obj):
+        """Get the number of attachments for the standard."""
+        return Attachment.objects.filter(element__pointer__standard=obj).count()
+
+    def get_n_of_attachments_uploaded(self, obj):
+        """Get the number of attachments uploaded in the standard."""
+        attachments = Attachment.objects.filter(element__pointer__standard=obj)
+        count = 0
+        for attachment in attachments:
+            if attachment.file:
+                count += 1
+        return count
+
 
 class PointerSerializer(serializers.ModelSerializer):
     """Serializer for Pointer model."""
 
+    n_of_attachments = serializers.SerializerMethodField()
+    n_of_attachments_uploaded = serializers.SerializerMethodField()
+
     class Meta:
         model = Pointer
-        fields = ["id", "title", "standard", "created_at", "updated_at"]
+        fields = ["id", "title", "standard", "created_at", "updated_at", "n_of_attachments", "n_of_attachments_uploaded"]
         read_only_fields = ["id", "created_at", "updated_at"]
+
+    def get_n_of_attachments(self, obj):
+        """Get the number of attachments for the pointer."""
+        return Attachment.objects.filter(element__pointer=obj).count()
+
+    def get_n_of_attachments_uploaded(self, obj):
+        """Get the number of attachments uploaded in the pointer."""
+        attachments = Attachment.objects.filter(element__pointer=obj)
+        count = 0
+        for attachment in attachments:
+            if attachment.file:
+                count += 1
+        return count
 
 
 class ElementSerializer(serializers.ModelSerializer):
     """Serializer for Element model."""
 
+    n_of_attachments = serializers.SerializerMethodField()
+    n_of_attachments_uploaded = serializers.SerializerMethodField()
+
     class Meta:
         model = Element
-        fields = ["id", "title", "pointer", "created_at", "updated_at"]
+        fields = ["id", "title", "pointer", "created_at", "updated_at", "n_of_attachments", "n_of_attachments_uploaded"]
         read_only_fields = ["id", "created_at", "updated_at"]
+
+    def get_n_of_attachments(self, obj):
+        """Get the number of attachments for the element."""
+        return Attachment.objects.filter(element=obj).count()
+
+    def get_n_of_attachments_uploaded(self, obj):
+        """Get the number of attachments uploaded in the element."""
+        attachments = Attachment.objects.filter(element=obj)
+        count = 0
+        for attachment in attachments:
+            if attachment.file:
+                count += 1
+        return count
 
 
 class AttachmentSerializer(serializers.ModelSerializer):
