@@ -1,322 +1,125 @@
-# Quality Assurance Unit API Documentation
+# Quality Assurance Unit - Project Documentation
 
-## Overview
+## Project Overview
 
-This document provides information about all available API endpoints in the Quality Assurance Unit system. The API uses JWT authentication and follows RESTful principles.
+The Quality Assurance Unit (QAU) API is a comprehensive system designed to manage quality assurance processes in educational institutions. It enables administrators, supervisors, professors, and teaching assistants to collaborate on standards, share documents, and manage courses.
 
-## Authentication
+## Key Features
 
-### Obtaining Tokens
+-   **User Management**: Role-based access control with four roles (Admin, Supervisor, Professor, TA)
+-   **Standards Management**: Create and manage academic and pragmatic standards
+-   **Document Management**: Upload, share, and request access to attachments
+-   **Course Management**: Track courses, course files, and related documents
+-   **Academic Year Management**: Organize standards and courses by academic years
+-   **API-First Design**: RESTful API with JWT authentication
 
--   **Endpoint**: `/api/token/`
--   **Method**: POST
--   **Description**: Get JWT access and refresh tokens
--   **Request Body**:
-    ```json
-    {
-        "email": "user@example.com",
-        "password": "your_password"
-    }
+## System Architecture
+
+### Core Apps
+
+-   **Users App**:
+
+    -   Custom user model with role-based permissions
+    -   Authentication using JWT tokens
+    -   User profile management
+
+-   **Standards App**:
+
+    -   Academic year management (Active/Archived)
+    -   Standards management (Academic/Pragmatic)
+    -   Hierarchical structure: Standard → Pointer → Element → Attachment
+    -   Request system for file sharing
+
+-   **Courses App**:
+    -   Course management linked to professors and academic years
+    -   Course files and attachments
+    -   Permission-based access to files
+
+### Technology Stack
+
+-   **Backend**: Django 5.2 with Django REST Framework 3.16
+-   **Database**: PostgreSQL 16
+-   **Authentication**: JWT using Simple JWT
+-   **API Documentation**: drf-spectacular (OpenAPI 3.0)
+-   **Containerization**: Docker & Docker Compose
+-   **Data Filtering**: django-filter
+
+## Database Schema
+
+### Users App
+
+-   `User`: Custom user model extending Django's AbstractUser
+    -   Fields: id (UUID), email, role, username, password, etc.
+
+### Standards App
+
+-   `AcademicYear`: Academic year with active/archived status
+    -   Fields: id, status, start_date, end_date
+-   `Standard`: Standard associated with an academic year
+    -   Fields: id, academic_year, title, type, assigned_to (many-to-many with User)
+-   `Pointer`: Component of a standard
+    -   Fields: id, standard, title
+-   `Element`: Component of a pointer
+    -   Fields: id, pointer, title
+-   `Attachment`: File attached to an element
+    -   Fields: id, element, file, title, uploaded_by, shared_with (many-to-many with User)
+-   `Request`: Access request for an attachment
+    -   Fields: id, requester, receiver, made_on (attachment), status
+
+### Courses App
+
+-   `Course`: Course associated with an academic year and professor
+    -   Fields: id, academic_year, professor, title, code, level, semester, credit_hours
+-   `CourseFile`: File associated with a course
+    -   Fields: id, course, title
+-   `CourseAttachment`: File attached to a course file
+    -   Fields: id, course_file, file
+
+## Environment Setup
+
+### Prerequisites
+
+-   Python
+-   Docker and Docker Compose
+-   Git
+-   A code editor (e.g., VS Code)
+
+### Local Development Setup
+
+1. **Clone the repository**:
+
+    ```bash
+    git clone [repository-url]
+    cd Quality_Assurance_Unit_API
     ```
--   **Response**:
-    ```json
-    {
-        "access": "access_token_string",
-        "refresh": "refresh_token_string"
-    }
+
+2. **Create environment file**:
+
+    - Create `.env` file in the root directory of the project.
+        ```bash
+        touch .env
+        ```
+    - Copy the contents of `.env.example` in section (Ready variables for testing) to `.env`.
+
+3. **Start the application**:
+
+    ```bash
+    docker-compose up -d
     ```
 
-### Refreshing Tokens
+4. **Access the application**:
+    - API: http://localhost:8000/api/
+    - API documentation: http://localhost:8000/api/schema/swagger-ui/
+    - Admin panel: http://localhost:8000/admin/
 
--   **Endpoint**: `/api/token/refresh/`
--   **Method**: POST
--   **Description**: Get a new access token using refresh token
--   **Request Body**:
-    ```json
-    {
-        "refresh": "your_refresh_token"
-    }
-    ```
--   **Response**:
-    ```json
-    {
-        "access": "new_access_token_string"
-    }
-    ```
+## Security Considerations
 
-## User Management
+-   JWT tokens expire after 15 minutes
+-   Refresh tokens expire after 7 days
+-   Role-based access control for all endpoints
+-   File access is controlled through permissions
+-   User passwords are properly hashed
 
-### List/Create Users
+## For More Details
 
--   **Endpoint**: `/api/users/`
--   **Methods**: GET, POST
--   **Access**: Admin only
--   **Description**: Get all users or create a new user
--   **Filters**:
-    -   `role`: Filter by user role (ADMIN, SUPERVISOR, PROFESSOR, TA)
--   **Ordering**:
-    -   `username`, `last_login`, `date_joined`
--   **Search**: Search by `username`
-
-### Get Current User
-
--   **Endpoint**: `/api/users/me/`
--   **Method**: GET
--   **Access**: Authenticated users
--   **Description**: Get current authenticated user's details
-
-### Get/Update/Delete Single User
-
--   **Endpoint**: `/api/users/{id}/`
--   **Methods**: GET, PUT, PATCH, DELETE
--   **Access**: Admin only
--   **Description**: Get, update or delete a specific user
-
-## Academic Years
-
-### List/Create Academic Years
-
--   **Endpoint**: `/api/academic-years/`
--   **Methods**: GET, POST
--   **Access**: GET (authenticated), POST (admin only)
--   **Description**: Get all academic years or create a new one
--   **Filters**:
-    -   `status`: Filter by status (ACTIVE, ARCHIVED)
--   **Ordering**:
-    -   `start_date`
--   **Search**: Search by `start_date`
-
-### Get/Update/Delete Single Academic Year
-
--   **Endpoint**: `/api/academic-years/{id}/`
--   **Methods**: GET, PUT, PATCH, DELETE
--   **Access**: GET (authenticated), others (admin only)
--   **Description**: Get, update or delete a specific academic year
-
-## Standards
-
-### List/Create Standards
-
--   **Endpoint**: `/api/standards/`
--   **Methods**: GET, POST
--   **Access**: GET (authenticated), POST (admin only)
--   **Description**: Get all standards or create a new one
--   **Filters**:
-    -   `type`: Filter by type (ACADEMIC, PRAGMATIC)
-    -   `academic_year`: Filter by academic year ID
--   **Ordering**:
-    -   `created_at`, `title`
--   **Search**: Search by `title`
-
-### Get/Update/Delete Single Standard
-
--   **Endpoint**: `/api/standards/{id}/`
--   **Methods**: GET, PUT, PATCH, DELETE
--   **Access**: GET (authenticated), others (admin only)
--   **Description**: Get, update or delete a specific standard
-
-## Pointers
-
-### List/Create Pointers
-
--   **Endpoint**: `/api/pointers/`
--   **Methods**: GET, POST
--   **Access**: GET (authenticated), POST (admin only)
--   **Description**: Get all pointers or create a new one
--   **Filters**:
-    -   `standard`: Filter by standard ID
--   **Ordering**:
-    -   `created_at`, `title`
--   **Search**: Search by `title`
-
-### Get/Update/Delete Single Pointer
-
--   **Endpoint**: `/api/pointers/{id}/`
--   **Methods**: GET, PUT, PATCH, DELETE
--   **Access**: GET (authenticated), others (admin only)
--   **Description**: Get, update or delete a specific pointer
-
-## Elements
-
-### List/Create Elements
-
--   **Endpoint**: `/api/elements/`
--   **Methods**: GET, POST
--   **Access**: GET (authenticated), POST (admin only)
--   **Description**: Get all elements or create a new one
--   **Filters**:
-    -   `pointer`: Filter by pointer ID
--   **Ordering**:
-    -   `created_at`, `title`
--   **Search**: Search by `title`
-
-### Get/Update/Delete Single Element
-
--   **Endpoint**: `/api/elements/{id}/`
--   **Methods**: GET, PUT, PATCH, DELETE
--   **Access**: GET (authenticated), others (admin only)
--   **Description**: Get, update or delete a specific element
-
-## Attachments
-
-### List/Create Attachments
-
--   **Endpoint**: `/api/attachments/`
--   **Methods**: GET, POST
--   **Access**: GET (authenticated), POST (admin only)
--   **Description**: Get all attachments or create a new one
--   **Filters**:
-    -   `element`: Filter by element ID
--   **Ordering**:
-    -   `created_at`, `title`
--   **Search**: Search by `title`
-
-### Get/Update/Delete Single Attachment
-
--   **Endpoint**: `/api/attachments/{id}/`
--   **Methods**: GET, PUT, PATCH, DELETE
--   **Access**: GET (authenticated), others (admin only)
--   **Description**: Get, update or delete a specific attachment
-
-### Upload Attachment File
-
--   **Endpoint**: `/api/attachments/{id}/upload/`
--   **Method**: POST
--   **Access**: Users assigned to the standard or admins
--   **Description**: Upload a file to an attachment
--   **Request**: Form data with `file` field
-
-### Remove Attachment File
-
--   **Endpoint**: `/api/attachments/{id}/remove/`
--   **Method**: DELETE
--   **Access**: Users assigned to the standard or admins
--   **Description**: Remove a file from an attachment
-
-### Download Attachment File
-
--   **Endpoint**: `/api/attachments/{id}/download/`
--   **Method**: GET
--   **Access**: Users assigned to the standard, users in shared_with list, or admins
--   **Description**: Download an attachment file
-
-## Requests
-
-### List/Create Requests
-
--   **Endpoint**: `/api/requests/`
--   **Methods**: GET, POST
--   **Access**: Authenticated users
--   **Description**: Get all requests or create a new one
--   **Filters**:
-    -   `status`: Filter by status (PENDING, APPROVED, REJECTED, CANCELED)
-    -   `requester`: Filter by requester user ID
-    -   `receiver`: Filter by receiver user ID
--   **Ordering**:
-    -   `created_at`
--   **Search**: Search by `requester__username`, `receiver__username`
-
-### Get/Update/Delete Single Request
-
--   **Endpoint**: `/api/requests/{id}/`
--   **Methods**: GET, PUT, PATCH, DELETE
--   **Access**: GET (authenticated), others (admin only)
--   **Description**: Get, update or delete a specific request
-
-### Approve Request
-
--   **Endpoint**: `/api/requests/{id}/approve/`
--   **Method**: POST
--   **Access**: Request receiver or admin
--   **Description**: Approve a pending request
-
-### Reject Request
-
--   **Endpoint**: `/api/requests/{id}/reject/`
--   **Method**: POST
--   **Access**: Request receiver or admin
--   **Description**: Reject a pending request
-
-### Cancel Request
-
--   **Endpoint**: `/api/requests/{id}/cancel/`
--   **Method**: POST
--   **Access**: Request requester or admin
--   **Description**: Cancel a pending request
-
-## Courses
-
-### List/Create Courses
-
--   **Endpoint**: `/api/courses/`
--   **Methods**: GET, POST
--   **Access**: GET (authenticated), POST (admin only)
--   **Description**: Get all courses or create a new one
--   **Filters**:
-    -   `academic_year`: Filter by academic year ID
-    -   `level`: Filter by level (1, 2, 3, 4)
-    -   `semester`: Filter by semester (1, 2)
--   **Ordering**:
-    -   `created_at`, `title`, `credit_hours`
--   **Search**: Search by `title`, `code`
-
-### Get/Update/Delete Single Course
-
--   **Endpoint**: `/api/courses/{id}/`
--   **Methods**: GET, PUT, PATCH, DELETE
--   **Access**: GET (authenticated), others (admin only)
--   **Description**: Get, update or delete a specific course
-
-## Course Files
-
-### List/Create Course Files
-
--   **Endpoint**: `/api/course-files/`
--   **Methods**: GET, POST
--   **Access**: GET (authenticated), POST (admin only)
--   **Description**: Get all course files or create a new one
--   **Filters**:
-    -   `course`: Filter by course ID
--   **Ordering**:
-    -   `created_at`, `title`
--   **Search**: Search by `title`
-
-### Get/Update/Delete Single Course File
-
--   **Endpoint**: `/api/course-files/{id}/`
--   **Methods**: GET, PUT, PATCH, DELETE
--   **Access**: GET (authenticated), others (admin only)
--   **Description**: Get, update or delete a specific course file
-
-## Course Attachments
-
-### List/Create Course Attachments
-
--   **Endpoint**: `/api/course-attachments/`
--   **Methods**: GET, POST
--   **Access**: GET (authenticated), POST (course professor or admin)
--   **Description**: Get all course attachments or create a new one
--   **Filters**:
-    -   `course_file`: Filter by course file ID
--   **Ordering**:
-    -   `created_at`
-
-### Get/Update/Delete Single Course Attachment
-
--   **Endpoint**: `/api/course-attachments/{id}/`
--   **Methods**: GET, PUT, PATCH, DELETE
--   **Access**: GET (authenticated), others (course professor or admin)
--   **Description**: Get, update or delete a specific course attachment
-
-### Download Course Attachment File
-
--   **Endpoint**: `/api/course-attachments/{id}/download/`
--   **Method**: GET
--   **Access**: Authenticated users
--   **Description**: Download a course attachment file
-
-## API Documentation
-
--   **OpenAPI Schema**: `/api/schema/`
--   **Swagger UI**: `/api/schema/swagger-ui/`
--   **ReDoc**: `/api/schema/redoc/`
+For more information on the Project, please refer to the following link: [Deatiled Documentation](https://www.notion.so/QAU_Puplic_Docs-2034c4b365c980ab8477ed6bdf639fd6?source=copy_link)
